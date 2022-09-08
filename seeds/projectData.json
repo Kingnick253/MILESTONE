@@ -1,17 +1,32 @@
 [
   {
-    "name": "Flour",
-    "quantity": "` lb`",
-    "user_id": 1
+    "name": "MILESTONE",
+    "description": "Our main project",
+    "start_date": "2022-09-07",
+    "end_date": "",
+    "tasks": 6,
+    "project_lead": 1,
+    "is_done": false,
+    "in_progress": true
   },
   {
-    "name": "Apples",
-    "quantity": "10",
-    "user_id": 1
+    "name": "Making Pancakes",
+    "description": "Steps for making pancakes",
+    "start_date": "2022-08-15",
+    "end_date": "2022-08-20",
+    "tasks": 4,
+    "project_lead": 2,
+    "is_done": true,
+    "in_progress": false
   },
   {
-    "name": "Sugar",
-    "quantity": "12 cups",
-    "user_id": 2
+    "name": "Learning a Sport",
+    "description": "Project about learning how to play baseball",
+    "start_date": "2022-09-07",
+    "end_date": "",
+    "tasks": 12,
+    "project_lead": 3,
+    "is_done": false,
+    "in_progress": true
   }
 ]
