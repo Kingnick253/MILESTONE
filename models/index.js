@@ -1,14 +1,15 @@
 const User = require('./User');
-const FoodItem = require('./FoodItem');
+//const FoodItem = require('./FoodItem');
+const ProjectTracker = require('./projectTracker')
 
 // Create associations
-User.hasMany(FoodItem, {
+User.hasMany(ProjectTracker, {
   onDelete: 'CASCADE',
   foreignKey: 'id',
 });
 
-FoodItem.belongsTo(FoodItem, {
+ProjectTracker.belongsTo(User, {
   foreignKey: 'id'
 });
 
-module.exports = { User, FoodItem };
+module.exports = { User, ProjectTracker };
