@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class FoodItem extends Model {}
+class ProjectTracker extends Model {}
 
-FoodItem.init(
+ProjectTracker.init(
   {
     name: {
       type: DataTypes.STRING(100),
@@ -29,4 +29,4 @@ FoodItem.init(
   }
 );
 
-module.exports = FoodItem;
+module.exports = ProjectTracker;
