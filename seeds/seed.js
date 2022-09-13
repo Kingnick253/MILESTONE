@@ -1,8 +1,10 @@
 const sequelize = require('../config/connection');
-const { User, ProjectTracker } = require('../models');
+
+const { User, Project, Task } = require('../models');
 
 const userData = require('./userData.json');
-const ProjectTrackerData = require('./projectData.json');
+const projectData = require('./projectData.json');
+const taskData = require('./taskData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -12,7 +14,15 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  await ProjectTracker.bulkCreate(ProjectTrackerData, {
+
+  await Project.bulkCreate(projectData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  await Task.bulkCreate(taskData, {
+
+
     individualHooks: true,
     returning: true,
   });
