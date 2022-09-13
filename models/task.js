@@ -20,11 +20,7 @@ id: {
     defaultValue: false,
 
   },
-  is_done:{
-    type: DataTypes.BOOLEAN,
-    defaultValue: false,
 
-  },
   project_id: {
     type: DataTypes.INTEGER,
     references: {
