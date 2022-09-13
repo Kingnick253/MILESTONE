@@ -5,27 +5,59 @@ class ProjectTracker extends Model {}
 
 ProjectTracker.init(
   {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     name: {
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    quantity: {
-      type: DataTypes.STRING(40),
+    description: {
+      type: DataTypes.STRING(500),
       allowNull: false
     },
-    user_id: {
+    project_lead: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
         key: 'id'
       }
-    }
+    },
+    start_date:{
+      type: DataTypes.DATE,
+      allowNull: false,
+
+    },
+    end_date:{
+      type: DataTypes.DATE,
+      allowNull: false,
+
+    },
+    task:{
+      type: DataTypes.STRING(100),
+      allowNull: false
+
+    },
+    is_done:{
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+
+    },
+    in_progess:{
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
+
+    },
+    
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'food_item',
+    modelName: 'project_tracker',
   }
 );
 
