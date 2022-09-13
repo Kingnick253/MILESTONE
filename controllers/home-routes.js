@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { projectTracker, User } = require('../models');
-const withAuth = require('../utils/auth');
+const { User } = require('../models');
+const {withAuth,withNoAuth} = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
@@ -19,7 +19,7 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
+router.get('/login',withNoAuth, (req, res) => {
   
   if (req.session.logged_in) {
     res.redirect('/');
