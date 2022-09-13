@@ -26,16 +26,6 @@ ProjectTracker.init(
         key: 'id'
       }
     },
-    start_date:{
-      type: DataTypes.DATE,
-      allowNull: false,
-
-    },
-    end_date:{
-      type: DataTypes.DATE,
-      allowNull: false,
-
-    },
     task_list:{
       type: DataTypes.STRING(100),
       allowNull: false
