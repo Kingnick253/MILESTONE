@@ -36,7 +36,7 @@ ProjectTracker.init(
       allowNull: false,
 
     },
-    task:{
+    task_list:{
       type: DataTypes.STRING(100),
       allowNull: false
 
@@ -57,7 +57,7 @@ ProjectTracker.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project_tracker',
+    modelName: 'projectTracker',
   }
 );
 
