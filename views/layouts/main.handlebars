@@ -7,14 +7,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-	<link rel="stylesheet" href="/css/styles.css">
+	<link rel="stylesheet" href="css/style.css">
 	<title>Milestone</title>
+	<div class="bg"></div>
+	<div class="bg bg2"></div>
+	<div class="bg bg3"></div>
 </head>
 <header>
 	<!-- Navigation bar aka banner-->
 	<nav class="navbar fixed-top navbar-expand-lg bg-light">
 		<div class="container-fluid">
-			<img src="../../public/images/logo.png" alt="image" width="50" class="mb-1">
+			<img src="images/logo.png" alt="image" width="50" class="mb-1">
 			<a class="navbar-brand" href="./homepage.html">Milestone</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -26,26 +29,33 @@
 					<li class="nav-item">
 						<a class="nav-link" href="./loginpage.html">Login</a>
 					</li>
-					<li class="nav-item dropdown">
+
+					<li class="nav-item">
+						<a class="nav-link" href="https://www.chartjs.org/" target="_blank">Chart.js</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://party.js.org/" target="_blank">Party.js</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://github.com/Kingnick253/MILESTONE" target="_blank">GitHub</a>
+					</li>
+					{{!-- <li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-							aria-expanded="false">
-							Resources
-						</a>
-						<ul class="dropdown-menu">
+							aria-expanded="false">Resources</a> --}}
+						{{!-- <ul class="dropdown-menu">
 							<li><button class="dropdown-item active" type="button" aria-current="true"
 									onclick="window.location.href='https://www.chartjs.org/';">
-									Chart.js
-								</button></li>
+									Chart.js</button></li>
 
 							<li><button class="dropdown-item active" type="button" aria-current="true"
 									onclick="window.location.href='https://party.js.org/';">
 									Party.js
-								</button></li>
-							<li><button class="dropdown-item active" type="button" aria-current="true"
+								</button></li> --}}
+							{{!-- <li><button class="dropdown-item active" type="button" aria-current="true"
 									onclick="window.location.href='https://github.com/Kingnick253/MILESTONE';">
 									GitHub
-								</button></li>
-						</ul>
+								</button></li> --}}
+						{{!-- </ul> --}}
 				</ul>
 				<form class="d-flex" role="search">
 					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -57,16 +67,18 @@
 </header>
 
 <body>
-	<div class="login card">
-		<div class="card-body">
-			<h1>Login</h1>
-			<p>Don't have an account? <a href="/signup">Create an account here</a></p>
+	{{!-- <div class="login card">
+	<div class="card-body">
+	
+	<h1>Login</h1> --}}
 
-			{{{body}}}
+	{{{body}}}
 
-		</div>
-	</div>
+	
 
+	{{!-- <p>Don't have an account? <a href="/signup">Create an account here</a></p>
+    </div>
+     </div> --}}
 </body>
 
 <footer class="bg-white">
