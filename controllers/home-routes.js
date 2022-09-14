@@ -33,6 +33,10 @@ router.get('/signup', withNoAuth, (req, res) => {
   res.render('signup');
 });
 
+
+
+
+
 module.exports = router;
 
 
