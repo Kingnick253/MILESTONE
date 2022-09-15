@@ -25,12 +25,12 @@ router.post('/', async (req, res) => {
 router.post('/login', async (req, res) => {
   try {
     // TODO: Add a comment describing the functionality of this expression
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const userData = await User.findOne({ where: { username: req.body.username } });
 
     if (!userData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Incorrect username or password, please try again' });
       return;
     }
 
@@ -40,7 +40,7 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Incorrect username or password, please try again' });
       return;
     }
 
@@ -66,5 +66,16 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
+router.get('/all', async (req, res) => {
+  try {
+    // TODO: Add a comment describing the functionality of this expression
+    const userData = await User.findAll();
+
+      res.status(200).json(userData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+})
 
 module.exports = router;
