@@ -15,5 +15,21 @@ router.post('/', withAuth, async (req, res) => {
     }
   });
 
+  router.get('/',withAuth, async (req, res) => {
+    try {
+      const dbProjectData = await ProjectTracker.findAll({});
+  
+      // const ProjectData = dbProjectData.map((ProjectTracker) =>
+      //   ProjectTracker.get({ plain: true })
+      //);
+  
+      res.json( dbProjectData);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+
+
   module.exports = router;
   

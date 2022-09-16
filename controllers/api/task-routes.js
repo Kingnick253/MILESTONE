@@ -5,11 +5,9 @@ const { Task } = require('../../models');
 router.post('/', withAuth, async (req, res) => {
     try {
       const newTask= await Task.create({
-        // ...req.body,
-        // project_lead: req.session.project_lead,
-        description:req.body.description,
-        is_done:req.body.is_done,
-        project_id:req.body.project_id    
+        ...req.body,
+        project_id: req.session.project_id,
+          
     });
   
       res.status(200).json(newTask);
@@ -17,5 +15,21 @@ router.post('/', withAuth, async (req, res) => {
       res.status(400).json(err);
     }
   });
+
+  router.get('/',withAuth, async (req, res) => {
+    try {
+      const dbTaskData = await Task.findAll({});
+  
+      // const ProjectData = dbProjectData.map((ProjectTracker) =>
+      //   ProjectTracker.get({ plain: true })
+      //);
+  
+      res.json( dbTaskData);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+
 
   module.exports = router;
