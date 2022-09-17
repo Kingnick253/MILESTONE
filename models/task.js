@@ -11,6 +11,11 @@ id: {
     primaryKey: true,
     autoIncrement: true,
   },
+
+  title: {
+    type: DataTypes.STRING(100),
+    allowNull: false
+  },
   description: {
     type: DataTypes.STRING(500),
     allowNull: false
