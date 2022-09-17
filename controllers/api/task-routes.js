@@ -31,5 +31,39 @@ router.post('/', withAuth, async (req, res) => {
     }
   });
 
+  router.get('/:id',withAuth, async (req, res) => {
+    try {
+      const dbTaskData = await Task.findByPk(req.params.id,{
+   });
+
+   const task = dbTaskData.get({plain:true});
+   res.json(task);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+  
+
+  router.delete('/:id', withAuth, async (req, res) => {
+    try {
+      const TaskData = await Task.destroy({
+        where: {
+          id: req.params.id,
+          // project_lead: req.session.project_lead,
+        },
+      });
+  
+      if (!TaskData) {
+        res.status(404).json({ message: 'No task found with this id!' });
+        return;
+      }
+  
+      res.status(200).json(TaskData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
 
   module.exports = router;
