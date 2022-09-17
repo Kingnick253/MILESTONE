@@ -30,6 +30,42 @@ router.post('/', withAuth, async (req, res) => {
     }
   });
 
+  router.get('/:id',withAuth, async (req, res) => {
+    try {
+      const dbProjectData = await ProjectTracker.findByPk(req.params.id,{
+   });
+
+   const project = dbProjectData.get({plain:true});
+   res.json(project);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+   
+  
+  router.delete('/:id', withAuth, async (req, res) => {
+    try {
+      const projectData = await ProjectTracker.destroy({
+        where: {
+          id: req.params.id,
+          // project_lead: req.session.project_lead,
+        },
+      });
+  
+      if (!projectData) {
+        res.status(404).json({ message: 'No project found with this id!' });
+        return;
+      }
+  
+      res.status(200).json(projectData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+
+
 
   module.exports = router;
   
