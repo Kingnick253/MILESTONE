@@ -3,50 +3,50 @@
         "title": "Test 1",
         "description": "Making Pancakes 1",
         "project_id": 2,
-        "is_done": true,
-        "in_progress": false
+        "is_done": false,
+        "in_progress": true
     },
     {
         "title": "Test 2",
         "description": "Making Pancakes 2",
         "project_id": 2,
-        "is_done": true,
-        "in_progress": false
+        "is_done": false,
+        "in_progress": true
     },
     {
         "title": "Test 3",
         "description": "Making Pancakes 3",
         "project_id": 2,
-        "is_done": true,
-        "in_progress": false
+        "is_done": false,
+        "in_progress": true
     },
     {
         "title": "Test 4",
         "description": "Making Pancakes 4",
         "project_id": 2,
-        "is_done": true,
-        "in_progress": false
+        "is_done": false,
+        "in_progress": true
     },
     {
         "title": "Test 5",
         "description": "MILESTONE 1",
         "project_id": 2,
-        "is_done": true,
-        "in_progress": false
+        "is_done": false,
+        "in_progress": true
     },
     {
         "title": "Test 6",
         "description": "MILESTONE 2",
         "project_id": 2,
-        "is_done": true,
-        "in_progress": false
+        "is_done": false,
+        "in_progress": true
     },
     {
         "title": "Test 7",
         "description": "MILESTONE 3",
         "project_id": 2,
-        "is_done": true,
-        "in_progress": false
+        "is_done": false,
+        "in_progress": true
     },
     {
         "title": "Test 8",
@@ -60,70 +60,70 @@
         "description": "MILESTONE 5",
         "project_id": 2,
         "is_done": false,
-        "in_progress": false
+        "in_progress": true
     },
     {
         "title": "Test 10",
         "description": "MILESTONE 6",
         "project_id": 2,
         "is_done": false,
-        "in_progress": false
+        "in_progress": true
     },
     {
         "title": "Test 11",
         "description": "Learing Sport 1",
         "project_id": 2,
-        "is_done": true,
-        "in_progress": false
+        "is_done": false,
+        "in_progress": true
     },
     {
         "title": "Test 12",
         "description": "Learing Sport 2",
         "project_id": 2,
-        "is_done": true,
-        "in_progress": false
+        "is_done": false,
+        "in_progress": true
     },
     {
         "title": "Test 13",
         "description": "Learing Sport 3",
         "project_id": 2,
-        "is_done": true,
-        "in_progress": false
+        "is_done": false,
+        "in_progress": true
     },
     {
         "title": "Test 14",
         "description": "Learing Sport 4",
         "project_id": 2,
-        "is_done": true,
-        "in_progress": false
+        "is_done": false,
+        "in_progress": true
     },
     {
         "title": "Test 15",
         "description": "Learing Sport 5",
         "project_id": 2,
-        "is_done": true,
-        "in_progress": false
+        "is_done": false,
+        "in_progress": true
     },
     {
         "title": "Test 17",
         "description": "Learing Sport 6",
         "project_id": 2,
-        "is_done": true,
-        "in_progress": false
+        "is_done": false,
+        "in_progress": true
     },
     {
         "title": "Test 18",
         "description": "Learing Sport 7",
         "project_id": 2,
-        "is_done": true,
-        "in_progress": false
+        "is_done": false,
+        "in_progress": true
     },
     {
         "title": "Test 19",
         "description": "Learing Sport 8",
         "project_id": 2,
-        "is_done": true,
-        "in_progress": false
+        "is_done": false,
+        "in_progress": true
     },
     {
         "title": "Test 20",
@@ -136,22 +136,22 @@
         "title": "Test 21",
         "description": "Learing Sport 10",
         "project_id": 2,
-        "is_done": true,
-        "in_progress": false
+        "is_done": false,
+        "in_progress": true
     },
     {
         "title": "Test 22",
         "description": "Learing Sport 11",
         "project_id": 2,
         "is_done": false,
-        "in_progress": false
+        "in_progress": true
     },
     {
         "title": "Test 23",
         "description": "Learing Sport 12",
         "project_id": 2,
         "is_done": false,
-        "in_progress": false
+        "in_progress": true
     }
   ]
   
