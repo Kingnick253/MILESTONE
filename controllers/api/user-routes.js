@@ -47,7 +47,11 @@ router.post('/login', async (req, res) => {
     // TODO: Add a comment describing the functionality of this method
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.logged_in = true;
+      if(userData && validPassword){
+        req.session.logged_in = true;
+      } else {
+        req.session.logged_in = false;
+      }
 
       res.json({ user: userData, message: 'You are now logged in!' });
     });
