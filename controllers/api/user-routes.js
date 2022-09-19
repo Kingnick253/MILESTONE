@@ -71,15 +71,36 @@ router.post('/logout', (req, res) => {
   }
 });
 
-router.get('/all', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     // TODO: Add a comment describing the functionality of this expression
     const userData = await User.findAll();
+    
+    const users = userData.map((user) => user.toJSON());
+    res.render('test', { users })
 
       res.status(200).json(userData);
   } catch (err) {
     res.status(400).json(err);
   }
-})
+});
+
+// router.get('/users/:id', async (req, res) => {
+//   try {
+//     // TODO: Add a comment describing the functionality of this expression
+//     const userData = await User.findByPk(req.params.id);
+//     if(!userData){
+//       res.status(404).json({message: 'No user found with that username'});
+//       return;
+//     }
+//     const user = userData.get({plain: true});
+//     res.render('user', user);
+//       res.status(200).json(userData);
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
+
+
 
 module.exports = router;
