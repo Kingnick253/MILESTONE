@@ -15,8 +15,21 @@ router.post('/', withAuth, async (req, res) => {
       res.status(400).json(err);
     }
   });
+  //test route
+  router.get('/test', async (req, res) => {
+    try {
+     res.render('test',{
+      layout:'main'
+     })
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
 
-  router.get('/',withAuth, async (req, res) => {
+// ************  v removed withAuth need to put back ***********
+//this route is giving the data for chart.js
+  router.get('/', async (req, res) => {
     try {
       const dbTaskData = await Task.findAll({});
   
@@ -64,6 +77,6 @@ router.post('/', withAuth, async (req, res) => {
       res.status(500).json(err);
     }
   });
-
-
+  
+  
   module.exports = router;
