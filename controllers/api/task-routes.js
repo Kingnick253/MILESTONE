@@ -29,9 +29,35 @@ router.post('/', withAuth, async (req, res) => {
 
 // ************  v removed withAuth need to put back ***********
 //this route is giving the data for chart.js
-  router.get('/', async (req, res) => {
+  router.get('/',withAuth, async (req, res) => {
     try {
       const dbTaskData = await Task.findAll({});
+
+
+      
+  
+      // const ProjectData = dbProjectData.map((ProjectTracker) =>
+      //   ProjectTracker.get({ plain: true })
+      //);
+  
+      res.json( dbTaskData);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+
+
+  // ***********Test route for all the of the data in task *********
+  router.get('/',withAuth, async (req, res) => {
+    try {
+      const dbTaskData = await Task.findAll();
+
+      const tasks = dbTaskData.map((task) => task.toJSON());
+      res.render('all', { tasks });
+
+
+      
   
       // const ProjectData = dbProjectData.map((ProjectTracker) =>
       //   ProjectTracker.get({ plain: true })
