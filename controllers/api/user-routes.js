@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
     });
 
     req.session.save(() => {
-      req.session.user_id = dbUserData.id;
+      // req.session.user_id = dbUserData.id;
       req.session.logged_in = true;
 
       res.status(200).json(dbUserData);
@@ -46,12 +46,12 @@ router.post('/login', async (req, res) => {
 
     // TODO: Add a comment describing the functionality of this method
     req.session.save(() => {
-      req.session.user_id = userData.id;
-      if(userData && validPassword){
+      // req.session.user_id = userData.id;
+      // if(userData && validPassword){
         req.session.logged_in = true;
-      } else {
-        req.session.logged_in = false;
-      }
+      // } else {
+      //   req.session.logged_in = false;
+      // }
 
       res.json({ user: userData, message: 'You are now logged in!' });
     });
@@ -71,19 +71,19 @@ router.post('/logout', (req, res) => {
   }
 });
 
-router.get('/', async (req, res) => {
-  try {
-    // TODO: Add a comment describing the functionality of this expression
-    const userData = await User.findAll();
+// router.get('/', async (req, res) => {
+//   try {
+//     // TODO: Add a comment describing the functionality of this expression
+//     const userData = await User.findAll();
     
-    const users = userData.map((user) => user.toJSON());
-    res.render('test', { users })
+//     const users = userData.map((user) => user.toJSON());
+//     res.render('test', { users })
 
-      res.status(200).json(userData);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+//       res.status(200).json(userData);
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
 
 // router.get('/users/:id', async (req, res) => {
 //   try {
