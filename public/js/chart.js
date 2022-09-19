@@ -3,6 +3,7 @@ const bTwo = document.getElementById("btnTwo");
 const bThree = document.getElementById("btnThree");
 const bFour = document.getElementById("btnFour");
 const bFive = document.getElementById("btnFive");
+const pieChart = document.getElementById("pieChart");
 const defaultVals = ["red", "red", "red", "red", "red"];
 const pieSiceSize = [5,5,5,5,5];
 let myChart = '';
@@ -49,9 +50,9 @@ let myChart = '';
                   return index.title;
                 });
             
-                const description = datapoints.map(function (index) {
-                  return index.description;
-                });
+                // const description = datapoints.map(function (index) {
+                //   return index.description;
+                // });
             
                 console.log(title);
                 
@@ -66,6 +67,8 @@ let myChart = '';
             console.log(datapoints);
             
           }
+          // Event listner to create pieChart
+          pieChart.addEventListener("click", createPieChart);
           // Each these functions will change a specific slice of on the pieChart to green(So when the user is done with the task they can log there progession.) 
           function updateBtnOne(){
             myChart.data.datasets[0].backgroundColor.splice(0,1, "green");
