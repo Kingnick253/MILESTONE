@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,7 +12,7 @@
   <div class="bgpp"></div>
   <div class="bgpp bgpp2"></div>
   <div class="bgpp bgpp3"></div>
-</head>
+</head> --}}
 <header>
   <!-- Navigation bar aka banner-->
   <nav class="navbar fixed-top navbar-expand-lg bg-light">
@@ -30,6 +30,10 @@
           <li class="nav-item">
             <a class="nav-link">Logout</a>
           </li>
+    {{#else}}
+          <li class="nav-item">
+						<a class="nav-link" href="/login">Login</a>
+					</li>
 		 {{/if}} 
 
           <li class="nav-item">
@@ -99,7 +103,7 @@
   </main>
 </body>
 
-<footer class="bg-light">
+{{!-- <footer class="bg-light">
   <div class="container" >
     <div class="row py-4">
       <div class="col-lg-6 col-md-6 mb-6 mb-lg-6"><img src="/images/logo.png" alt="" width="100" class="mb-3">
@@ -126,11 +130,11 @@
       </div>
     </div>
   </div>
-</footer>
+</footer> --}}
 
 {{#if logged_in}}
 <script src="/js/logout.js"></script>
 {{/if}}
 
 <script src="/models/projectTracker.js"></script>
-</html>
+{{!-- </html> --}}

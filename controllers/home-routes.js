@@ -20,12 +20,15 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.get('/login',withNoAuth, (req, res) => {
-  
-  res.render('login');
+  res.render('home');
+});
+
+router.get('/home',withNoAuth, (req, res) => {
+  res.render('home');
 });
 
 router.get('/signup', withNoAuth, (req, res) => {
-  res.render('signup');
+  res.render('home');
 });
 
 router.get('/project/:id', async (req, res) => {
