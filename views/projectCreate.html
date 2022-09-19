@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="./layouts/assets/style.css">
+  <title>Milestone</title>
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+</head>
+<header>
+  <!-- Navigation bar aka banner-->
+  <nav class="navbar fixed-top navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <img src="../public/images/logo.png" alt="" width="50" class="mb-1">
+      <a class="navbar-brand" href="./homepage.html">Milestone</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+          <li class="nav-item">
+            <a class="nav-link">Logout</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.chartjs.org/" target="_blank">Chart.js</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://party.js.org/" target="_blank">Party.js</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/Kingnick253/MILESTONE" target="_blank">GitHub</a>
+          </li>
+       
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<!--the form to make the project and put data into db-->
+<body>
+  <div class="card project-form">
+  <div class="card-body pojectBody mt-0">
+  <section>
+    <div class="form-group">
+      <!--Input title-->
+      <h1>Create your Project</h1>
+      <label for="projectName">Project Title</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" required></textarea>
+    </div>
+    <div class="form-group">
+        <!--Input # of tasks-->
+      <label for="numTasks">Select the number of tasks you would like</label>
+      <select class="form-control" id="exampleFormControlSelect1" required>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+   
+    <div class="form-group">
+        <!--Input desc-->
+      <label for="projectDesc">Project Description</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+    </div>
+    <button type="button" class="btn btn-primary btn-lg mt-2" onclick="document.location='taskcreate.html'" >Next</button>
+  </section>
+  </div>
+  </div>
+</body>
+
+
+<footer class="bg-light">
+    <div class="container" >
+      <div class="row py-4">
+        <div class="col-lg-6 col-md-6 mb-6 mb-lg-6"><img src="../public/images/logo.png" alt="" width="100" class="mb-3">
+          <p class="font-italic text-muted">Milestone is here to make sure all your project tasks get checked off of your
+            list.
+          </p>
+          <div class="py-0">
+            <div class="container text-center">
+              <p class="font-italic text-muted">© 2022 Milestone All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+          <h6 class="text-uppercase font-weight-bold mb-4">The Team</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="https://github.com/Kingnick253" target="_blank" class="text-muted">Nicholas Webb</a>
+            </li>
+            <li class="mb-2"><a href="https://github.com/alka485" target="_blank" class="text-muted">Alka Sah</a></li>
+            <li class="mb-2"><a href="https://github.com/thegwanj" target="_blank" class="text-muted">Gwanju Chung</a>
+            </li>
+            <li class="mb-2"><a href="https://github.com/BriMoreno" target="_blank" class="text-muted">Britania Moreno</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</html>
