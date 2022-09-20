@@ -10,7 +10,7 @@ router.get('/', withAuth, async (req, res) => {
 
     const users = userData.map((project) => project.get({ plain: true }));
 
-    res.render('login', {
+    res.render('home', {
       users,
       logged_in: req.session.logged_in,
     });
@@ -20,15 +20,16 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.get('/login',withNoAuth, (req, res) => {
-  res.render('login');
-});
-//While logged in it will take user to project creation page.
-router.get('/home',withAuth, (req, res) => {
-  res.render('home');
+  res.render('login', {
+    logged_in: req.session.logged_in,
+  });
 });
 
+
 router.get('/signup', withNoAuth, (req, res) => {
-  res.render('home');
+  res.render('signup', {
+    logged_in: req.session.logged_in,
+  });
 });
 // Get one project
 router.get('/project/:id', withAuth, async (req, res) => {
