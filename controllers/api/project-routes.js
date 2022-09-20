@@ -5,8 +5,11 @@ const { withAuth } = require('../../utils/auth');
 router.post('/', withAuth, async (req, res) => {
     try {
       const newProject = await ProjectTracker.create({
-      ...req.body,
-        project_lead:req.session.project_lead,
+        title: req.body.title,
+        description: req.body.description,
+        is_done: false,
+        in_progress: true,
+        task_list: req.body.task_list,
       });
   
       res.status(200).json(newProject);

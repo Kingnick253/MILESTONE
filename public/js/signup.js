@@ -6,15 +6,15 @@ const signupFormHandler = async (event) => {
     const email = document.querySelector('#email').value.trim();
     const password = document.querySelector('#password').value.trim();
   
-    if (username && password ) {
+    if (username && password && email) {
       const response = await fetch('/api/users', {
         method: 'POST',
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ username, email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        document.location.replace('/home');
+        document.location.replace('/');
       } else {
         alert('Failed to signup.');
       }
@@ -22,5 +22,5 @@ const signupFormHandler = async (event) => {
   };
   
   document
-    .querySelector('.signup-form')
-    .addEventListener('submit', signupFormHandler);
+    .querySelector('#submit')
+    .addEventListener('click', signupFormHandler);
