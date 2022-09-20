@@ -11,7 +11,8 @@ ProjectTracker.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    //Changed from name to title
+    title: {
       type: DataTypes.STRING(100),
       allowNull: false
     },
