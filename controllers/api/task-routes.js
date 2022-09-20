@@ -15,10 +15,49 @@ router.post('/', withAuth, async (req, res) => {
       res.status(400).json(err);
     }
   });
+  //test route
+  router.get('/test', async (req, res) => {
+    try {
+     res.render('test',{
+      layout:'main'
+     })
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
 
+// ************  v removed withAuth need to put back ***********
+//this route is giving the data for chart.js
   router.get('/',withAuth, async (req, res) => {
     try {
       const dbTaskData = await Task.findAll({});
+
+
+      
+  
+      // const ProjectData = dbProjectData.map((ProjectTracker) =>
+      //   ProjectTracker.get({ plain: true })
+      //);
+  
+      res.json( dbTaskData);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+
+
+  // ***********Test route for all the of the data in task *********
+  router.get('/',withAuth, async (req, res) => {
+    try {
+      const dbTaskData = await Task.findAll();
+
+      const tasks = dbTaskData.map((task) => task.toJSON());
+      res.render('all', { tasks });
+
+
+      
   
       // const ProjectData = dbProjectData.map((ProjectTracker) =>
       //   ProjectTracker.get({ plain: true })
@@ -64,6 +103,6 @@ router.post('/', withAuth, async (req, res) => {
       res.status(500).json(err);
     }
   });
-
-
+  
+  
   module.exports = router;

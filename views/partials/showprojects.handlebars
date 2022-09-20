@@ -1,0 +1,15 @@
+ <!--Display projects-->
+  <main class="container-fluid project-list">
+    <div class="row row-cols-lg-1 g-2">
+      <div class="col-sm-9 bg-light p-2 border">
+        <div class="card projectCard">
+          <div class="card-body" >
+            <a href="/projectTracker/{{id}}"></a>
+            <h5 class="card-title">{{projectTracker.name}}</h5>
+            <p class="card-text">{{projectTracker.description}}</p>
+            <button type="button" class="btn btn-warning" href="./tasks">View Tasks</button>
+            <button type="button" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+  </main>

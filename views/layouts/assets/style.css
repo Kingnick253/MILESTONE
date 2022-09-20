@@ -180,3 +180,7 @@ h1 {
     transform:translateX(25%);
   }
 }
+
+.logout {
+  border: none;
+}

@@ -1,0 +1,85 @@
+ 
+  <!--User card-->
+  <aside class="user-card">
+    <div class="container p-3 d-flex justify-content-left">
+      <div class="card p-4">
+        <div class=" image d-flex flex-column justify-content-center align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
+            class="bi bi-person-circle" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+            <path fill-rule="evenodd"
+              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+          </svg>
+		<span class="name mt-3">{{username.type}}</span>
+        </div>
+      </div>
+  </aside>
+  <section class="instuctions">
+    <div class="card" style="width: 70rem;">
+      <div class="card-body" id="#instuctions">
+        <h2>How to add a project</h2>
+        <ul>
+          <li>Click on the "add project button</li>
+          <li>A new tab will open where you can input your project information</li>
+          <li>Then you will be able to add your project tasks</li>
+          <li>When finished you will be re-directed to this page and be able to view your project and tasks</li>
+        </ul>
+      </div>
+      <div>
+        <button class="btn btn-warning btn-md m-2" href="/projectCreate" target="_blank">Add
+          Project</button>
+      </div>
+    </div>
+  </section>
+
+  <!--Display projects-->
+  <main class="container-fluid project-list">
+    <div class="row row-cols-lg-1 g-2">
+      <div class="col-sm-9 bg-light p-2 border">
+        <div class="card projectCard">
+          <div class="card-body">
+            <h5 class="card-title">{{projectTracker.name}}</h5>
+            <p class="card-text">{{projectTracker.description}}</p>
+            <button type="button" class="btn btn-warning" href="./tasks">View Tasks</button>
+            <button type="button" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+  </main>
+</body>
+
+{{!-- <footer class="bg-light">
+  <div class="container" >
+    <div class="row py-4">
+      <div class="col-lg-6 col-md-6 mb-6 mb-lg-6"><img src="/images/logo.png" alt="" width="100" class="mb-3">
+        <p class="font-italic text-muted">Milestone is here to make sure all your project tasks get checked off of your
+          list.
+        </p>
+        <div class="py-0">
+          <div class="container text-center">
+            <p class="font-italic text-muted">© 2022 Milestone All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+        <h6 class="text-uppercase font-weight-bold mb-4">The Team</h6>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-2"><a href="https://github.com/Kingnick253" target="_blank" class="text-muted">Nicholas Webb</a>
+          </li>
+          <li class="mb-2"><a href="https://github.com/alka485" target="_blank" class="text-muted">Alka Sah</a></li>
+          <li class="mb-2"><a href="https://github.com/thegwanj" target="_blank" class="text-muted">Gwanju Chung</a>
+          </li>
+          <li class="mb-2"><a href="https://github.com/BriMoreno" target="_blank" class="text-muted">Britania Moreno</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer> --}}
+
+{{#if logged_in}}
+<script src="/js/logout.js"></script>
+{{/if}}
+
+<script src="/models/projectTracker.js"></script>
+{{!-- </html> --}}

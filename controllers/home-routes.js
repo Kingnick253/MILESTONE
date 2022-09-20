@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Project,User } = require('../models');
+const { User, Task, ProjectTracker} = require('../models');
 const {withAuth,withNoAuth} = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
@@ -20,29 +20,37 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.get('/login',withNoAuth, (req, res) => {
-  
   res.render('login');
+});
+//While logged in it will take user to project creation page.
+router.get('/home',withAuth, (req, res) => {
+  res.render('home');
 });
 
 router.get('/signup', withNoAuth, (req, res) => {
-  res.render('signup');
+  res.render('home');
 });
-
-router.get('/project/:id', async (req, res) => {
+// Get one project
+router.get('/project/:id', withAuth, async (req, res) => {
   try {
-    const projectData = await Project.findByPk(req.params.id, {
+    const dbProjectData = await ProjectTracker.findByPk(req.params.id, {
       include: [
         {
-          model: User,
-          attributes: ['name'],
+          model: Task,
+          attributes: [
+            'id',
+            'title',
+            'description',
+        
+          ],
         },
       ],
     });
 
-    const project = projectData.get({ plain: true });
+    const projectdata = dbProjectData.get({ plain: true });
 
     res.render('project', {
-      ...project,
+      projectdata,
       logged_in: req.session.logged_in
     });
   } catch (err) {
