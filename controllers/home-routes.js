@@ -5,11 +5,12 @@ const {withAuth,withNoAuth} = require('../utils/auth');
 router.get('/', withAuth, async (req, res) => {
   try {
     const userData = await User.findAll({
+      include: ProjectTracker,
       attributes: { exclude: ['password'] }
     });
 
     const users = userData.map((project) => project.get({ plain: true }));
-
+    console.log(users);
     res.render('home', {
       users,
       logged_in: req.session.logged_in,
@@ -34,6 +35,12 @@ router.get('/signup',  (req, res) => {
 
 router.get('/projectCreate', withAuth, (req, res) => {
   res.render('projectCreate', {
+    logged_in: req.session.logged_in,
+  });
+});
+
+router.get('/taskCreate', withAuth, (req, res) => {
+  res.render('taskCreate', {
     logged_in: req.session.logged_in,
   });
 });

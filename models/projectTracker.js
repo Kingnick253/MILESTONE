@@ -26,10 +26,11 @@ ProjectTracker.init(
         model: 'user',
         key: 'id'
       }
+      
     },
     task_list:{
       type: DataTypes.STRING(100),
-      allowNull: false
+      allowNull: true
 
     },
     is_done:{
