@@ -7,13 +7,12 @@ router.post('/', withAuth, async (req, res) => {
       const newProject = await ProjectTracker.create({
         title: req.body.title,
         description: req.body.description,
-        is_done: false,
-        in_progress: true,
-        task_list: req.body.task_list,
+        project_lead: req.session.userId
       });
   
       res.status(200).json(newProject);
     } catch (err) {
+      console.log(err)
       res.status(400).json(err);
     }
   });

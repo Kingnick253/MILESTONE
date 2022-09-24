@@ -6,7 +6,7 @@ const taskFormHandler = async (event) => {
     
   
     if (taskTitle && taskDescription) {
-      const response = await fetch('/api/users', {
+      const response = await fetch('/api/tasks', {
         method: 'POST',
         body: JSON.stringify({ taskTitle,taskDescription}),
         headers: { 'Content-Type': 'application/json' },

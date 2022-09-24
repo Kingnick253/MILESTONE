@@ -1,16 +1,16 @@
 [
   {
-    "name": "MILESTONE",
+    "title": "MILESTONE",
     "description": "Our main project",
     "start_date": "2022-09-07",
     "end_date": "2022-09-09",
-    "task_list": 6,
+    "task_list": 3,
     "project_lead": 1,
     "is_done": false,
     "in_progress": true
   },
   {
-    "name": "Making Pancakes",
+    "title": "Making Pancakes",
     "description": "Steps for making pancakes",
     "start_date": "2022-08-15",
     "end_date": "2022-08-20",
@@ -20,11 +20,11 @@
     "in_progress": false
   },
   {
-    "name": "Learning a Sport",
+    "title": "Learning a Sport",
     "description": "Project about learning how to play baseball",
     "start_date": "2022-09-07",
     "end_date": "2022-09-09",
-    "task_list": 12,
+    "task_list": 5,
     "project_lead": 3,
     "is_done": false,
     "in_progress": true

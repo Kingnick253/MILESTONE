@@ -7,27 +7,29 @@
       <!--Input title-->
       <h1>Create your Project</h1>
       <label for="projectName">Project Title</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" required></textarea>
+      <textarea class="form-control" id="projectTitle" rows="1" required></textarea>
     </div>
     <div class="form-group">
+      
         <!--Input # of tasks-->
-      <label for="numTasks">Select the number of tasks you would like</label>
-      <select class="form-control" id="exampleFormControlSelect1" required>
+      {{!-- <label for="numTasks">Select the number of tasks you would like</label> --}}
+      {{!-- <select class="form-control" id="exampleFormControlSelect1" required>
         <option>1</option>
         <option>2</option>
         <option>3</option>
         <option>4</option>
         <option>5</option>
-      </select>
+      </select> --}}
     </div>
    
     <div class="form-group">
         <!--Input desc-->
       <label for="projectDesc">Project Description</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+      <textarea class="form-control" id="projectDescription" rows="3" required></textarea>
     </div>
-    <button type="button" class="btn btn-primary btn-lg mt-2" onclick="document.location='taskcreate.html'" >Next</button>
+    <button  class="btn btn-primary btn-lg mt-2" id = "create_project" >Create</button>
   </section>
   </div>
   </div>
+  <script src="/js/project.js"></script>
 </body>

@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
     req.session.save(() => {
       // req.session.user_id = dbUserData.id;
       req.session.logged_in = true;
-
+      req.session.userId = dbUserData.id
       res.status(200).json(dbUserData);
     });
   } catch (err) {
@@ -49,6 +49,7 @@ router.post('/login', async (req, res) => {
       // req.session.user_id = userData.id;
       // if(userData && validPassword){
         req.session.logged_in = true;
+        req.session.userId = userData.id;
       // } else {
       //   req.session.logged_in = false;
       // }
