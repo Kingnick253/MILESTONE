@@ -19,15 +19,21 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-router.get('/login',withNoAuth, (req, res) => {
+router.get('/login', (req, res) => {
   res.render('login', {
     logged_in: req.session.logged_in,
   });
 });
 
 
-router.get('/signup', withNoAuth, (req, res) => {
+router.get('/signup',  (req, res) => {
   res.render('signup', {
+    logged_in: req.session.logged_in,
+  });
+});
+
+router.get('/projectCreate', withAuth, (req, res) => {
+  res.render('projectCreate', {
     logged_in: req.session.logged_in,
   });
 });

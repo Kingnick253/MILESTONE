@@ -15,17 +15,7 @@ router.post('/', withAuth, async (req, res) => {
       res.status(400).json(err);
     }
   });
-  //test route
-  router.get('/test', async (req, res) => {
-    try {
-     res.render('test',{
-      layout:'main'
-     })
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  });
+
 
 // ************  v removed withAuth need to put back ***********
 //this route is giving the data for chart.js
